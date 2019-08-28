@@ -22,6 +22,8 @@
 
 			#result {
 				height: 10px;
+				padding: 5px;
+				margin-bottom: 15px;
 			}
 			input {
 				display: block;
@@ -71,6 +73,8 @@
 			} else if (operator === '/') {
 				total = parseInt(num1) / parseInt(num2);
 				result.textContent = total;
+			}else {
+				result.textContent = "please select operator"
 			}
 		};
 	</script>
