@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Simple Calculator</title>
+		<style>
+			.container {
+				width: 80%;
+				margin: auto;
+			}
+			button {
+				display: inline-block;
+				margin-top: 15px;
+				background-color: dodgerblue;
+				color: white;
+				padding: 10px 20px;
+				border: none;
+				border-radius: 50px;
+			}
+
+			#result {
+				height: 10px;
+			}
+			input {
+				display: block;
+				width: 150px;
+				height: 5vh;
+				margin-bottom: 1em;
+				padding: 5px;
+			}
+			select {
+				display: block;
+				padding: 5px 10px;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div id="result" style="color:green; font-weight: bold"></div>
+			<input type="number" id="num1" />
+			<input type="number" id="num2" />
+			<select name="" id="operator">
+				<option value="operator">select operator</option>
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="/">/</option>
+				<option value="x">*</option>
+			</select>
+			<button onclick="submit()">Equal</button>
+		</div>
+	</body>
+	<script>
+		submit = () => {
+			let result = document.getElementById('result');
+			const num1 = document.getElementById('num1').value;
+			const num2 = document.getElementById('num2').value;
+			const operator = document.getElementById('operator').value;
+
+			if (operator === '+') {
+				total = parseInt(num1) + parseInt(num2);
+				result.textContent = total;
+			} else if (operator === '-') {
+				total = parseInt(num1) - parseInt(num2);
+				result.textContent = total;
+			} else if (operator === 'x') {
+				total = parseInt(num1) * parseInt(num2);
+				result.textContent = total;
+			} else if (operator === '/') {
+				total = parseInt(num1) / parseInt(num2);
+				result.textContent = total;
+			}
+		};
+	</script>
+</html>
